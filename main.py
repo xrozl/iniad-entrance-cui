@@ -7,11 +7,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager 
 
-option: Options = Options()
-#option.add_argument("--headless")
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
-
-
 if not platform.system() == "Darwin":
     print('This script is only for MacOS')
     exit()
@@ -28,6 +23,9 @@ if not ssid() == "iniad":
     exit()
 else:
     print('INIAD Wifi connected')
+    option: Options = Options()
+    #option.add_argument("--headless")
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
     clazz: str = "btn btn-lg btn-info"
     driver.get('https://moocs.iniad.org/')
     time.sleep(2)

@@ -23,7 +23,7 @@ def ssid() -> str:
         return None
 
 print(f'SSID: {ssid()}')
-if ssid() == "iniad":
+if not ssid() == "iniad":
     print('INIAD Wifi not connected')
     exit()
 else:
